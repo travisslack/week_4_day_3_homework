@@ -28,9 +28,9 @@ class House
   return House.new(house[0])
  end 
 
- def delete()
-  sql = "DELETE * FROM houses;"
-  return sql_runner.run(sql)
+ def self.delete()
+  sql = "DELETE FROM houses;"
+  return SqlRunner.run(sql)
  end 
 
 end 

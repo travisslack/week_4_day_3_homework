@@ -1,8 +1,9 @@
 require_relative('../models/student')
 require_relative('../models/house')
 
-House.delete()
+
 Student.delete()
+House.delete()
 
 house1 = House.new({
   "house_name" => "Gryffindor",
@@ -35,28 +36,28 @@ house4.save
 student1 = Student.new({
   "first_name" => "Harry",
   "second_name" => "Potter",
-  "house_id" => 1,
+  "house_id" => house1.id,
   "age" => 16
   })
 
 student2 = Student.new({
   "first_name" => "Tom",
   "second_name" => "Riddle",
-  "house_id" => 2,
+  "house_id" => house2.id,
   "age" => 45
   })
 
 student3 = Student.new({
   "first_name" => "Newton",
   "second_name" => "Scamander",
-  "house_id" => 3, 
+  "house_id" => house3.id, 
   "age" => 23
   })
 
 student4 = Student.new({
   "first_name" => "Luna",
   "second_name" => "Lovegood",
-  "house_id" => 4,
+  "house_id" => house4.id,
   "age" => 16
   })
 

@@ -14,7 +14,7 @@ attr_reader :first_name, :second_name, :house_id, :age
   end 
 
   def save()
-    sql = "INSERT INTO students (first_name, second_name, house_id, age) VALUES ('#{@first_name}', '#{@second_name}', '#{@house_id}', #{@age} ) RETURNING id;"
+    sql = "INSERT INTO students (first_name, second_name, house_id, age) VALUES ('#{@first_name}', '#{@second_name}', #{@house_id}, #{@age} ) RETURNING id;"
     student = SqlRunner.run(sql)
     @id = student[0]['id'].to_i
   end
@@ -39,9 +39,9 @@ def find_house()
    return House.find(@house_id)
 end 
 
-def delete()
- sql = "DELETE * FROM students;"
- return sql_runner.run(sql)
+def self.delete()
+ sql = "DELETE FROM students;"
+ return SqlRunner.run(sql)
 end 
 
 end 
