@@ -1,38 +1,8 @@
 require_relative('../models/student')
 require_relative('../models/house')
 
-student1 = Student.new({
-  "first_name" => "Harry",
-  "second_name" => "Potter",
-  "house" => "Gryffindor",
-  "age" => 16
-  })
-
-student2 = Student.new({
-  "first_name" => "Tom",
-  "second_name" => "Riddle",
-  "house" => "Slytherin",
-  "age" => 45
-  })
-
-student3 = Student.new({
-  "first_name" => "Newton",
-  "second_name" => "Scamander",
-  "house" => "Hufflepuff",
-  "age" => 23
-  })
-
-student4 = Student.new({
-  "first_name" => "Luna",
-  "second_name" => "Lovegood",
-  "house" => "Ravenclaw",
-  "age" => 16
-  })
-
-student1.save
-student2.save
-student3.save
-student4.save
+House.delete()
+Student.delete()
 
 house1 = House.new({
   "house_name" => "Gryffindor",
@@ -59,5 +29,40 @@ house1.save
 house2.save
 house3.save
 house4.save
+
+
+
+student1 = Student.new({
+  "first_name" => "Harry",
+  "second_name" => "Potter",
+  "house_id" => 1,
+  "age" => 16
+  })
+
+student2 = Student.new({
+  "first_name" => "Tom",
+  "second_name" => "Riddle",
+  "house_id" => 2,
+  "age" => 45
+  })
+
+student3 = Student.new({
+  "first_name" => "Newton",
+  "second_name" => "Scamander",
+  "house_id" => 3, 
+  "age" => 23
+  })
+
+student4 = Student.new({
+  "first_name" => "Luna",
+  "second_name" => "Lovegood",
+  "house_id" => 4,
+  "age" => 16
+  })
+
+student1.save
+student2.save
+student3.save
+student4.save
 
 

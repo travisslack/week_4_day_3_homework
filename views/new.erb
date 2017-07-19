@@ -1,27 +1,26 @@
 <form method="post" action="/students">
- <label for="first_name_field">First Name:</lable>
+ <label for="first_name_field">First Name:</label>
  <input 
  type="text"
  name="first_name"
  id="first_name_field"
  /> 
 
- <label for="second_name_field">Second Name:</lable>
+ <label for="second_name_field">Second Name:</label>
  <input 
  type="text"
  name="second_name"
  id="second_name_field"
  /> 
 
- <label for="house_selection">Choose the House:</lable>
- <select name="house" id="house_selection">
-   <option value="Gryffindor">Gryffindor</option>
-   <option value="Ravenclaw">Ravenclaw</option>
-   <option value="Hufflepuff">Hufflepuff</option>
-   <option value="Slytherin">Slytherin</option>
+ <label for="house_selection">Choose the House:</label>
+ <select name="house_id" id="house_selection">
+   <% @houses.each do |house| %>
+   <option value="<%= house.id %>"><%= house.house_name %></option>
+   <% end %>
  </select>
 
- <label for="age">Age:</lable>
+ <label for="age">Age:</label>
  <input 
  type="number"
  name="age"
